@@ -1,3 +1,4 @@
+
 def merge_sort(arr):
     for i in range((len(arr)-1)//2,-1,-1):
         shift_down(arr,len(arr),i)
@@ -5,37 +6,8 @@ def merge_sort(arr):
         arr[0],arr[-1]=arr[-1],arr[0]
         shift_down(arr,i,0)
 
-
 def shift_down(arr,n,k):
-    while(2*k+1<n):
-        j=2*k+1
-        if arr[2*k+2]>arr[2*k+1]:
-            j+=1
-        if arr[k]>arr[j]:
-            return
-        else:
-            arr[k],arr[j]=arr[j],arr[k]
-        k=j
-arr=[5,4,3,2,1,111]
-merge_sort(arr)
-print(arr)
-def heap_sort(arr):
-    #heapifyµÄ¹ı³Ì£¬heapifyÖ®ºó£¬ÂÒĞòµÄÊı×é±ä³ÉÁËÒ»¸ö×î´ó¶Ñ
-    for i in range((len(arr)-1)//2,-1,-1):
-        shift_down(arr,len(arr),i)
-    #¶¯Ì¬µ÷ÕûµÄ¹ı³Ì£¬ÒÀ´Î½«×î´óµÄÔªËØ·ÅÔÚÊı×éµÄÎ²²¿
-    i = len(arr)-1
-    while i>0:
-    #Ã¿´ÎÖ»ĞèÒª¶Ô¶Ñ¶¥½øĞĞÒ»´Îshiftdown£¬ÒòÎªÊÇÓÉÓÚ½»»»µ¼ÖÂ¶Ñ¶¥±ä»¯½ø¶ø±äÎª·Ç×î´ó¶Ñ
-        arr[0],arr[i]=arr[i],arr[0]
-        shift_down(arr,i,0)
-        i -= 1
-'''
-n:ĞèÒª»Ö¸´¶Ñ×´Ì¬µÄÊı×éÔªËØ¸öÊı
-k:Òªshift¡ª¡ªdownµÄÔªËØÎ»ÖÃ
-'''
-def shift_down(arr,n,k):
-    #Ö»ÒªÓĞ×óº¢×Ó£¬¾ÍÒª½øĞĞ±È½Ï
+    #åªè¦æœ‰å·¦å­©å­ï¼Œå°±è¦è¿›è¡Œæ¯”è¾ƒ
     while 2*k+1<n:
         j=2*k+1
         if j+1<n and arr[j+1]>arr[j]:
@@ -44,3 +16,12 @@ def shift_down(arr,n,k):
             break
         arr[k],arr[j]=arr[j],arr[k]
         k = j
+
+arr=[5,4,3,2,1,111]
+merge_sort(arr)
+print(arr)
+'''
+n:éœ€è¦æ¢å¤å †çŠ¶æ€çš„æ•°ç»„å…ƒç´ ä¸ªæ•°
+k:è¦shiftâ€”â€”downçš„å…ƒç´ ä½ç½®
+'''
+

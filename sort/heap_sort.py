@@ -1,9 +1,9 @@
 
-'''
-
-'''
 def heap_sort(arr):
+
     #heapify的过程，heapify之后，乱序的数组变成了一个最大堆
+    #heapify：从最后的一个非叶子节点开始，向上执行shift_down,
+
     for i in range((len(arr)-1)//2,-1,-1):
         shift_down(arr,len(arr),i)
     #动态调整的过程，依次将最大的元素放在数组的尾部
@@ -35,10 +35,7 @@ if __name__ == "__main__":
     print(arr)
 
 
-def heap_sort(arr):
-    for i in range((len(arr)-1),-1,-1):
-        shift_down(arr,len(arr),i)
-    arr
+
 
 def shift_down(arr,n,k):
     while(2*k+1<n):
